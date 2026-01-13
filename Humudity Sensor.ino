@@ -4,7 +4,7 @@
 
 #include "DHT.h"
 #define DHTPIN 27     // what pin we're connected to 
-#define DHTTYPE DHT22 // AM2302
+#define DHTTYPE DHT11 // AM2302
 DHT dht(DHTPIN, DHTTYPE);
 
 void setup() {
