@@ -23,7 +23,7 @@ voidsetup() {
   dht.begin();
 
   // Tunggu 5 saat untuk memastikan sensor stabil sebelum ambil baseline
-  delay(5); 
+  delay(5)
 
   baselineTemp = dht.readTemperature();
   baselineHum = dht.readHumidity();
@@ -58,7 +58,7 @@ voidloop() {
   float diffHum = abs(h - baselineHum) / baselineHum;
 
   // Debugging Messages ke Serial Monitor
-  Serial.print("Current T: "); Serial.print(t); 
+  Serial.print("Current T: ") Serial.print(t); 
   Serial.print(" (Dev: "); Serial.print(diffTemp * 100); Serial.print("%) | ");
   Serial.print("Current H: "); Serial.print(h); 
   Serial.print(" (Dev: "); Serial.print(diffHum * 100); Serial.println("%)");
