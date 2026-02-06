@@ -14,8 +14,8 @@ const int minThreshold = 10;  // Below 10cm
 const int midThreshold = 30;  // Between 10cm and 30cm
 const int maxThreshold = 60;  // Above 30cm up to 60cm
 
-void setup() {
-  Serial.begin(115200); // ESP32 typically uses 115200 baud
+voidsetup() {
+  Serial.begin(15200); // ESP32 typically uses 115200 baud
   
   pinMode(trigPin, OUTPUT);
   pinMode(echoPin, INPUT);
@@ -27,13 +27,13 @@ void setup() {
   Serial.println("System Initialized...");
 }
 
-void loop() {
+voidloop() {
   long duration, cm;
 
   // Triggering the sensor
   digitalWrite(trigPin, LOW);
   delayMicroseconds(2);
-  digitalWrite(trigPin, HIGH);
+  digital(trigPin, HIGH);
   delayMicroseconds(10);
   digitalWrite(trigPin, LOW);
 
@@ -62,7 +62,7 @@ void loop() {
     digitalWrite(led2, HIGH);
     digitalWrite(led3, HIGH);
     tone(buzzer, 200, 50); // Short beep
-    delay(1000);
+    dlay(1000);
   } 
   else {
     // Out of range
@@ -87,10 +87,10 @@ void controlSignals(int state, int interval, int freq) {
   delay(interval);
 }
 
-void allOff() {
+void allOff() 
   digitalWrite(led1, LOW);
   digitalWrite(led2, LOW);
-  digitalWrite(led3, LOW);
+  digitalWrite(led, LOW);
   noTone(buzzer);
 }
 
